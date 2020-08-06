@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Google Tag Manager -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167421270-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167421270-2');
+</script>
+
+  <!-- End Google Tag Manager -->
+
+  <!-- Materialize - Compiled and minified CSS-->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <!-- Font Awesome Icon - CSS-->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- Custom Styles-->
+  <title>Santosh Mohan Rajkumar | Engineer</title>
+
+  <!-- Open Graph-->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Santosh Mohan Rajkumar | Homepage " />
+  <meta property="og:description" content="Engineer | Web Developer | Systems & Control Researcher" />
+  <meta property="og:url" content="https://santoshrajkumar.github.io/" />
+  <meta property="og:site_name" content="Santosh Mohan Rajkumar | Engineer" />
+  <meta property="article:publisher" content="https://santoshrajkumar.github.io/" />
+  <meta property="og:image" content="https://santoshrajkumar.github.io/readme_images/preview.png" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@chow_rajkumar" />
+  <meta name="twitter:title" content="Electrical Engineer | Web Programmer | Systems & Control | Machine Learning Enthusiast" />
+  <meta name="twitter:description" content="Electrical Engineer | Web Programmer" />
+  <meta name="twitter:url" content="https://twitter.com/chow_rajkumar" />
+  <meta name="author" content="Santosh Mohan Rajkumar" />
+  <meta name="description" content="Electrical Engineer with a passion for Systems & Control, Web Programming, and Machine Learning / AI" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index, follow" />
+  <!-- Google Site Verification for indexing -->
+  <meta name="google-site-verification" content="7T9Ivqz9oLVM8s8Ea6KYS52SmexrnPqGY5Nlu406vH8" />
+</head>
+
+<body>
+
+    <!-- Eight Section: Contact -->
+    <section id="contact" class="section scrollspy full-height">
+      <h3 class="page-title white-text teal text-center">Contact Form</h3>
+
+
+      <div class="container" id="form-wrapper">
+
+        <form id="form" method="post">
+      
+          
+
+          <label>Name</label>
+          <input class="input-field" id="name" type="text" name="name" placeholder="Your Name Here" required>
+  
+          <label>Email</label>
+          <input class="input-field" id="email" type="text" name="email" placeholder="Your Email Here" required>
+  
+  
+          <label>Message</label>
+          <input class="input-field" id="message" type="text" name="message" placeholder="Enter Message" required>
+          
+          <h6 id="success"></h6>
+          <br><br>
+  
+          <input id="btn btn-primary" id="submit" type="submit">
+        </form>
+
+       
+      </div>
+
+
+
+      <div class="container">
+    
+        <p>
+          <a aria-label="Email Santosh" href="mailto:rajkumar.nits@gmail.com" target="_blank" data-position="top"
+            data-tooltip="Email Santosh" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+              class="fa fa-envelope"></i><a aria-label="Email Santosh" href="mailto:rajkumar.nits@gmail.com"
+              class="hoverline"> rajkumar.nits@gmail.com</a></a>
+        </p>
+        <p>
+          <a aria-label="Email Santosh" href="mailto:mohanrs@indianoil.in" target="_blank" data-position="top"
+            data-tooltip="Email Santosh" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+              class="fa fa-envelope"></i><a aria-label="Email Santosh" href="mailto:mohanrs@indianoil.in"
+              class="hoverline"> mohanrs@indianoil.in</a></a> 
+        </p>
+        <a href=""><button class="btn btn-primary">Go Home</button></a>
+      </div>
+    </section>
+  </main>
+
+
+
+  <!-- Javascript code to access your backend api to submit the contact form -->
+  <script type="text/javascript">
+  
+  // CSRF Token Generation code
+  function getCookie(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie !== '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = cookies[i].trim();
+		            // Does this cookie string begin with the name we want?
+		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    return cookieValue;
+		}
+  var csrftoken = getCookie('csrftoken');
+  // CSRF token code ends here
+
+    var form = document.getElementById('form-wrapper')
+    form.addEventListener('submit', function(e){
+      e.preventDefault()
+
+      
+      var url = 'http://127.0.0.1:8000/contact-form/'
+
+      var name = document.getElementById('name').value
+      var email = document.getElementById('email').value
+      var message = document.getElementById('message').value
+
+      fetch(url, {
+      method: 'POST',
+      headers:{
+        'Content-type':'application/json',
+        'X-CSRFToken': csrftoken,
+      },
+
+      body:JSON.stringify({'name':name, 'email':email, 'message':message})
+
+    } 
+    ).then(function(response){
+      document.getElementById('form').reset()
+      document.getElementById('success').textContent = "Your response is submitted successfully"
+    })
+
+
+    })
+
+    
+
+
+
+  </script>
+
+
+  
+</body>
+
+</html>

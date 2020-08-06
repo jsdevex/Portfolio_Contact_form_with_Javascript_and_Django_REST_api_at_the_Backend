@@ -1,0 +1,1 @@
+web: gunicorn contact_me.wsgi --log-file -
