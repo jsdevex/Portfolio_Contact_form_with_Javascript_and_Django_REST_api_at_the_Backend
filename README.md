@@ -29,3 +29,10 @@
 		}
   var csrftoken = getCookie('csrftoken');
 ```
+> Then use the csrf token generated inside the fetch method as:
+```javascript
+  headers:{
+        'Content-type':'application/json',
+        'X-CSRFToken': csrftoken,
+      },
+```
